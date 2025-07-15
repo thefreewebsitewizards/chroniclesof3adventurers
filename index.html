@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles of 3 Adventurers | Family Lifestyle Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .heading-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .play-card {
+            transition: all 0.3s ease;
+        }
+        
+        .play-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .book-card {
+            transition: all 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .smooth-scroll {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="heading-font text-2xl font-bold text-green-800">Chronicles of 3 Adventurers</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#play" class="nav-link">Play Themes</a>
+                    <a href="#books" class="nav-link">Book Picks</a>
+                    <a href="#bakes" class="nav-link">Saturday Bakes</a>
+                    <a href="#author" class="nav-link">Author</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl text-green-800"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
+            <a href="#about" class="block py-2 border-b border-amber-100">About Us</a>
+            <a href="#blog" class="block py-2 border-b border-amber-100">Blog</a>
+            <a href="#play" class="block py-2 border-b border-amber-100">Play Themes</a>
+            <a href="#books" class="block py-2 border-b border-amber-100">Book Picks</a>
+            <a href="#bakes" class="block py-2 border-b border-amber-100">Saturday Bakes</a>
+            <a href="#author" class="block py-2 border-b border-amber-100">Author</a>
+            <a href="#contact" class="block py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-image h-screen flex items-center justify-center text-center pt-16">
+        <div class="px-4">
+            <h1 class="heading-font text-4xl md:text-6xl font-bold text-white mb-6">Chronicles of 3 Adventurers</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">Celebrating life's small joys through motherhood, play, and resilience</p>
+            <a href="#about" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-medium transition duration-300 inline-block">Our Story</a>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white smooth-scroll">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">About Our Family</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Family playing together" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="heading-font text-2xl font-semibold text-green-700 mb-4">Our Journey Through Motherhood & Adventure</h3>
+                    <p class="text-gray-700 mb-4">Welcome to our little corner of the internet! I'm a mum to two incredible boys, navigating the beautiful chaos of parenting while embracing every moment of joy and challenge that comes our way.</p>
+                    <p class="text-gray-700 mb-4">Our family's journey includes parenting a child with Batten's CLN1, a rare terminal illness. Through this experience, we've learned the profound importance of celebrating small victories, finding beauty in everyday moments, and the healing power of play.</p>
+                    <p class="text-gray-700 mb-6">This blog is our space to share our adventures in sensory play, outdoor exploration, creative projects, and the books that inspire us along the way. We hope our stories bring you comfort, inspiration, and maybe even a few ideas for your own family adventures.</p>
+                    <div class="flex space-x-4">
+                        <a href="#blog" class="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full transition duration-300">Read Our Blog</a>
+                        <a href="#contact" class="border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-6 py-2 rounded-full transition duration-300">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 md:py-24 smooth-scroll">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">Latest Blog Posts</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post Cards -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30" alt="Sensory play" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-semibold text-green-700 mb-2">Sensory Play Ideas for Every Season</h3>
+                        <p class="text-gray-600 mb-4">Discover creative ways to engage your children's senses throughout the year...</p>
+                        <a href="#" class="text-amber-500 hover:text-amber-600 font-medium">Read More →</a>
+                    </div>
+                </div>
+                <!-- More blog posts can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Play Themes Section -->
+    <section id="play" class="py-16 md:py-24 bg-white smooth-scroll">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">Play Themes</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Play Theme Cards -->
+                <div class="play-card bg-amber-50 rounded-lg p-6 text-center">
+                    <i class="fas fa-leaf text-4xl text-green-600 mb-4"></i>
+                    <h3 class="heading-font text-xl font-semibold text-green-700 mb-2">Nature Play</h3>
+                    <p class="text-gray-600">Outdoor adventures and nature-based activities for curious minds.</p>
+                </div>
+                <!-- More play theme cards can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="heading-font text-2xl font-bold mb-2">Chronicles of 3 Adventurers</h3>
+                    <p class="text-sm">Celebrating life's small joys through motherhood, play, and resilience</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-pinterest text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-sm">
+                <p>&copy; 2023 Chronicles of 3 Adventurers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

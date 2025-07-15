@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.heading-font {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.play-card {
+    transition: all 0.3s ease;
+}
+
+.play-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card {
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.03);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #f59e0b;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.active-nav::after {
+    width: 100%;
+}
+
+.smooth-scroll {
+    scroll-margin-top: 100px;
+}
