@@ -3,238 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronicles of 3 Adventurers | Family Lifestyle Blog</title>
+    <title>The Little Adventurer - Family Fun, Play Ideas & Adventures</title>
+    <meta name="description" content="Join our family adventures! Discover creative play ideas, book recommendations, baking recipes, and parenting insights. Celebrating resilience, joy, and the magic of childhood.">
+    <meta name="keywords" content="family blog, play ideas, children activities, book recommendations, baking recipes, parenting, family adventures">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
-        
-        body {
-            font-family: 'Quicksand', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .heading-font {
-            font-family: 'Cormorant Garamond', serif;
+        :root {
+            --primary: #10b981;
+            --secondary: #f59e0b;
+            --accent: #8b5cf6;
+            --orange: #ff6b35;
+            --light-orange: #ffaa80; /* Light orange color for hover effect */
+            --light-green: rgba(16, 185, 129, 0.2); /* Light green color for shadow effect */
         }
         
         .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/landing page.jpg');
             background-size: cover;
             background-position: center;
-        }
-        
-        .play-card {
-            transition: all 0.3s ease;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .play-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px var(--light-green), 0 10px 10px -5px var(--light-green);
+            background-color: var(--light-orange) !important;
+            color: white;
         }
         
-        .book-card {
-            transition: all 0.3s ease;
+        .play-card:hover h3,
+        .play-card:hover p {
+            color: white;
         }
         
-        .book-card:hover {
-            transform: scale(1.03);
+        .play-card:hover .text-primary {
+            color: white;
         }
         
-        .nav-link {
-            position: relative;
+        /* Book cover image zoom effect */
+        .book-card img {
+            transition: transform 0.3s ease;
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #f59e0b;
-            transition: width 0.3s ease;
+        .book-card img:hover {
+            transform: scale(1.05);
         }
         
-        .nav-link:hover::after {
-            width: 100%;
+        /* Blog post container hover effect */
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .active-nav::after {
-            width: 100%;
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px var(--light-green), 0 10px 10px -5px var(--light-green);
         }
         
-        .smooth-scroll {
-            scroll-margin-top: 100px;
+        /* Review card hover effect */
+        .bg-gray-50.p-6.rounded-lg.shadow-md {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .bg-gray-50.p-6.rounded-lg.shadow-md:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px var(--light-green), 0 10px 10px -5px var(--light-green);
         }
     </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981',
+                        secondary: '#f59e0b',
+                        accent: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-amber-50 text-gray-800">
+<body class="font-sans">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <a href="#" class="heading-font text-2xl font-bold text-green-800">Chronicles of 3 Adventurers</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="nav-link">About Us</a>
-                    <a href="#blog" class="nav-link">Blog</a>
-                    <a href="#play" class="nav-link">Play Themes</a>
-                    <a href="#books" class="nav-link">Book Picks</a>
-                    <a href="#bakes" class="nav-link">Saturday Bakes</a>
-                    <a href="#author" class="nav-link">Author</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#hero" class="text-2xl font-bold text-primary">The Little Adventurer</a>
                 </div>
-                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars text-xl text-green-800"></i>
-                </button>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#blog" class="text-gray-700 hover:text-primary transition px-3 py-2">Blog</a>
+                        <a href="#play" class="text-gray-700 hover:text-primary transition px-3 py-2">Play Ideas</a>
+                        <a href="#books" class="text-gray-700 hover:text-primary transition px-3 py-2">Books</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary transition px-3 py-2">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary transition px-3 py-2">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="hidden md:hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
-            <a href="#about" class="block py-2 border-b border-amber-100">About Us</a>
-            <a href="#blog" class="block py-2 border-b border-amber-100">Blog</a>
-            <a href="#play" class="block py-2 border-b border-amber-100">Play Themes</a>
-            <a href="#books" class="block py-2 border-b border-amber-100">Book Picks</a>
-            <a href="#bakes" class="block py-2 border-b border-amber-100">Saturday Bakes</a>
-            <a href="#author" class="block py-2 border-b border-amber-100">Author</a>
-            <a href="#contact" class="block py-2">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-image h-screen flex items-center justify-center text-center pt-16">
-        <div class="px-4">
-            <h1 class="heading-font text-4xl md:text-6xl font-bold text-white mb-6">Chronicles of 3 Adventurers</h1>
-            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">Celebrating life's small joys through motherhood, play, and resilience</p>
-            <a href="#about" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-medium transition duration-300 inline-block">Our Story</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg fixed w-full z-40 mt-16 hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#blog" class="block px-3 py-2 text-gray-700 hover:text-primary transition">Blog</a>
+            <a href="#play" class="block px-3 py-2 text-gray-700 hover:text-primary transition">Play Ideas</a>
+            <a href="#books" class="block px-3 py-2 text-gray-700 hover:text-primary transition">Books</a>
+            <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary transition">About</a>
+            <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary transition">Contact</a>
         </div>
-    </header>
+    </div>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 md:py-24 bg-white smooth-scroll">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">About Our Family</h2>
-                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Family playing together" class="rounded-lg shadow-lg w-full h-auto">
-                </div>
-                <div class="md:w-1/2">
-                    <h3 class="heading-font text-2xl font-semibold text-green-700 mb-4">Our Journey Through Motherhood & Adventure</h3>
-                    <p class="text-gray-700 mb-4">Welcome to our little corner of the internet! I'm a mum to two incredible boys, navigating the beautiful chaos of parenting while embracing every moment of joy and challenge that comes our way.</p>
-                    <p class="text-gray-700 mb-4">Our family's journey includes parenting a child with Batten's CLN1, a rare terminal illness. Through this experience, we've learned the profound importance of celebrating small victories, finding beauty in everyday moments, and the healing power of play.</p>
-                    <p class="text-gray-700 mb-6">This blog is our space to share our adventures in sensory play, outdoor exploration, creative projects, and the books that inspire us along the way. We hope our stories bring you comfort, inspiration, and maybe even a few ideas for your own family adventures.</p>
-                    <div class="flex space-x-4">
-                        <a href="#blog" class="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full transition duration-300">Read Our Blog</a>
-                        <a href="#contact" class="border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-6 py-2 rounded-full transition duration-300">Get in Touch</a>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-image">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" style="color: #ff6b35;">Welcome to Our Adventure!</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white">Join our family as we explore the world of play, books, and baking. Discover creative ideas, honest reviews, and heartfelt stories.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- Keeping only these two buttons -->
+                <a href="#blog" class="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-green-600 transition">Explore Our Blog</a>
+                <a href="#play" class="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-green-600 transition">Discover Play Ideas</a>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="py-16 md:py-24 smooth-scroll">
-        <div class="container mx-auto px-4">
+    <section id="blog" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">Latest Blog Posts</h2>
-                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Latest Adventures</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our recent family adventures, play discoveries, and parenting insights</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post Cards -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30" alt="Sensory play" class="w-full h-48 object-cover">
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="./images/byAd.jpg" alt="Outdoor Play" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="heading-font text-xl font-semibold text-green-700 mb-2">Sensory Play Ideas for Every Season</h3>
-                        <p class="text-gray-600 mb-4">Discover creative ways to engage your children's senses throughout the year...</p>
-                        <a href="#" class="text-amber-500 hover:text-amber-600 font-medium">Read More →</a>
+                        <span class="inline-block bg-primary text-white px-3 py-1 rounded-full text-sm mb-3">Outdoor Play</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">10 Amazing Backyard Adventures</h3>
+                        <p class="text-gray-600 mb-4">Transform your backyard into an adventure playground with these creative and budget-friendly ideas...</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
                     </div>
-                </div>
-                <!-- More blog posts can be added here -->
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="./images/DIYBIN.jpg" alt="Sensory Play" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-secondary text-white px-3 py-1 rounded-full text-sm mb-3">Sensory Play</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">DIY Sensory Bins That Spark Joy</h3>
+                        <p class="text-gray-600 mb-4">Create engaging sensory experiences using everyday household items. Perfect for curious little hands...</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="./images/baking.jpg" alt="Saturday Bakes" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-accent text-white px-3 py-1 rounded-full text-sm mb-3">Saturday Bakes</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Easy Weekend Baking with Kids</h3>
+                        <p class="text-gray-600 mb-4">Simple recipes that bring families together in the kitchen. Mess-friendly and deliciously fun...</p>
+                        <a href="#" class="text-primary font-medium hover:underline">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-green-600 transition inline-block">View All Blog Posts</a>
             </div>
         </div>
     </section>
 
-    <!-- Play Themes Section -->
-    <section id="play" class="py-16 md:py-24 bg-white smooth-scroll">
-        <div class="container mx-auto px-4">
+    <!-- Play Categories Section -->
+    <section id="play" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-green-800 mb-4">Play Themes</h2>
-                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Play Categories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our collection of play ideas designed to spark creativity and joy</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Play Theme Cards -->
-                <div class="play-card bg-amber-50 rounded-lg p-6 text-center">
-                    <i class="fas fa-leaf text-4xl text-green-600 mb-4"></i>
-                    <h3 class="heading-font text-xl font-semibold text-green-700 mb-2">Nature Play</h3>
-                    <p class="text-gray-600">Outdoor adventures and nature-based activities for curious minds.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Outdoor Play -->
+                <div class="play-card bg-gray-50 p-6 rounded-lg text-center transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tree text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Outdoor Play</h3>
+                    <p class="text-gray-600 mb-4">Nature-based activities that encourage exploration and adventure in the great outdoors.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Ideas →</a>
                 </div>
-                <!-- More play theme cards can be added here -->
+                
+                <!-- Sensory Play -->
+                <div class="play-card bg-gray-50 p-6 rounded-lg text-center transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-paper text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sensory Play</h3>
+                    <p class="text-gray-600 mb-4">Engaging activities that stimulate the senses and support developmental growth.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Ideas →</a>
+                </div>
+                
+                <!-- Messy Play -->
+                <div class="play-card bg-gray-50 p-6 rounded-lg text-center transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Messy Play</h3>
+                    <p class="text-gray-600 mb-4">Creative and liberating activities that embrace the beautiful chaos of childhood.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Ideas →</a>
+                </div>
+                
+                <!-- Saturday Bakes -->
+                <div class="play-card bg-gray-50 p-6 rounded-lg text-center transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cookie-bite text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Saturday Bakes</h3>
+                    <p class="text-gray-600 mb-4">Family-friendly recipes that bring everyone together in the kitchen for delicious fun.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Recipes →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Recommendations Section -->
+    <section id="books" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Book Recommendations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover amazing books that spark imagination and create lasting memories</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">What We're Reading This Week</h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <!-- Book 1 -->
+                    <div class="book-card text-center transition-transform duration-300">
+                        <img src="./images/B1.jpg" alt="Book Cover" class="w-full h-48 object-cover rounded-lg shadow-md mb-3">
+                        <h4 class="font-bold text-gray-800 mb-1">The Magical Button</h4>
+                        <p class="text-gray-600 text-sm mb-2">by Danielle Prior</p>
+                        <a href="#" class="text-primary text-sm hover:underline">View on Amazon</a>
+                    </div>
+                    
+                    <!-- Book 2 -->
+                    <div class="book-card text-center transition-transform duration-300">
+                        <img src="./images/B2.jpg" alt="Book Cover" class="w-full h-48 object-cover rounded-lg shadow-md mb-3">
+                        <h4 class="font-bold text-gray-800 mb-1">Little People, BIG DREAMS Bob Marley</h4>
+                        <p class="text-gray-600 text-sm mb-2">by Maria Isabel Sanchez Vergara</p>
+                        <a href="#" class="text-primary text-sm hover:underline">View on Amazon</a>
+                    </div>
+                    
+                    <!-- Book 3 -->
+                    <div class="book-card text-center transition-transform duration-300">
+                        <img src="./images/B3.jpg" alt="Book Cover" class="w-full h-48 object-cover rounded-lg shadow-md mb-3">
+                        <h4 class="font-bold text-gray-800 mb-1">The Laughing Book</h4>
+                        <p class="text-gray-600 text-sm mb-2">by Kael Tudor and Daniel Wiseman</p>
+                        <a href="#" class="text-primary text-sm hover:underline">View on Amazon</a>
+                    </div>
+                    
+                    <!-- Book 4 -->
+                    <div class="book-card text-center transition-transform duration-300">
+                        <img src="./images/B4.jpg" alt="Book Cover" class="w-full h-48 object-cover rounded-lg shadow-md mb-3">
+                        <h4 class="font-bold text-gray-800 mb-1">Follow the Swallow</h4>
+                        <p class="text-gray-600 text-sm mb-2">by Julia Donaldson and Thomas Docherty</p>
+                        <a href="#" class="text-primary text-sm hover:underline">View on Amazon</a>
+                    </div>
+                    
+                    <!-- Book 5 -->
+                    <div class="book-card text-center transition-transform duration-300">
+                        <img src="./images/B5.jpg" alt="Book Cover" class="w-full h-48 object-cover rounded-lg shadow-md mb-3">
+                        <h4 class="font-bold text-gray-800 mb-1">teeny tiny science I see a Cloud</h4>
+                        <p class="text-gray-600 text-sm mb-2">by Saskia Gwinn and Daniela Sosa</p>
+                        <a href="#" class="text-primary text-sm hover:underline">View on Amazon</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-green-600 transition inline-block">View All Book Recommendations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <img src="./images/author logo.jpg" alt="Author Logo" class="w-full rounded-lg shadow-lg">
+                </div>
+                
+                <div class="lg:w-2/3">
+                    <p class="text-lg text-gray-600 mb-6">
+                        Hi! I'm a mum of two amazing boys, and this blog is our family's journey through the beautiful chaos of childhood. When my eldest was diagnosed with CLN1, our world shifted, but it also opened our eyes to the incredible resilience and joy that children possess.
+                    </p>
+                    
+                    <p class="text-lg text-gray-600 mb-6">
+                        Here, you'll find our adventures in play, honest book reviews, weekend baking experiments, and the real, unfiltered moments of family life. I believe in the power of simple pleasures – a good book, a messy craft project, or the perfect Saturday morning pancakes.
+                    </p>
+                    
+                    <p class="text-lg text-gray-600 mb-8">
+                        As a self-published author, I'm passionate about storytelling and creating content that celebrates the magic in everyday moments. Join us as we explore, create, and find joy in the little things.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-green-600 transition inline-flex items-center justify-center">
+                            <i class="fab fa-amazon mr-2"></i>
+                            Our Amazon Store
+                        </a>
+                        <a href="#" class="px-6 py-3 bg-secondary text-white rounded-full hover:bg-yellow-600 transition inline-flex items-center justify-center">
+                            <i class="fas fa-book mr-2"></i>
+                            My Books
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Saturday Bakes & Reviews</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our weekly baking adventures and honest reviews</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Reviewer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Blueberry Muffins</h4>
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"This week we tried a new blueberry muffin recipe that was a huge hit! The secret ingredient was a touch of lemon zest that really made the flavors pop."</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Recipe →</a>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Reviewer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Chocolate Chip Cookies</h4>
+                            <div class="flex text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Our classic chocolate chip cookie recipe never fails to delight. This week we experimented with adding a pinch of sea salt on top - absolute perfection!"</p>
+                    <a href="#" class="text-primary font-medium hover:underline">View Recipe →</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-green-600 transition inline-block">View All Baking Adventures</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We'd love to hear from you! Send us a message or connect with us on social media.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-green-600 transition">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Connect With Us</h3>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-medium text-gray-700 mb-4">Follow our adventures on social media:</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                                    <i class="fab fa-youtube text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center hover:bg-orange-600 transition">
+                                    <i class="fab fa-amazon text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Email us directly:</h4>
+                            <a href="mailto:hello@chroniclesof3adventurers.com" class="text-primary hover:underline">hello@chroniclesof3adventurers.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-green-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-4 md:mb-0">
-                    <h3 class="heading-font text-2xl font-bold mb-2">Chronicles of 3 Adventurers</h3>
-                    <p class="text-sm">Celebrating life's small joys through motherhood, play, and resilience</p>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Chroniclesof3adventurers</h3>
+                    <p class="text-gray-300">Celebrating the joy of play, resilience, and family adventures.</p>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-pinterest text-xl"></i></a>
-                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-facebook text-xl"></i></a>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#blog" class="text-gray-300 hover:text-white transition">Blog</a></li>
+                        <li><a href="#play" class="text-gray-300 hover:text-white transition">Play Ideas</a></li>
+                        <li><a href="#books" class="text-gray-300 hover:text-white transition">Books</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Outdoor Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Sensory Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Messy Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Saturday Bakes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to get our latest adventures and play ideas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button type="submit" class="bg-primary px-4 py-2 rounded-r-lg hover:bg-green-600 transition">Subscribe</button>
+                    </form>
                 </div>
             </div>
-            <div class="text-center mt-8 text-sm">
-                <p>&copy; 2023 Chronicles of 3 Adventurers. All rights reserved.</p>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 mb-4 md:mb-0">© 2023 Chroniclesof3adventurers. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Disclosures</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
+        
+        menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-
-        // Active nav link highlighting
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active-nav');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active-nav');
+        
+        // Smooth scroll for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
