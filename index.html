@@ -139,7 +139,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero-image">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6" style="color: #ff6b35;">Welcome to Our Adventure!</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" style="color: #ff6b35;"><span id="typing-text"></span></h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white">Join our family as we explore the world of play, books, and baking. Discover creative ideas, honest reviews, and heartfelt stories.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <!-- Keeping only these two buttons -->
@@ -417,29 +417,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We'd love to hear from you! Send us a message or connect with us on social media.</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We'd love to hear from you! Connect with us on social media.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <form class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-green-600 transition">Send Message</button>
-                    </form>
-                </div>
-                
+            <div class="flex justify-center">
                 <div class="lg:w-1/2">
                     <div class="bg-white p-6 rounded-lg shadow-md h-full">
                         <h3 class="text-xl font-bold text-gray-800 mb-6">Connect With Us</h3>
@@ -562,6 +544,28 @@
                 }
             });
         });
+        
+        // Typing animation for hero text
+        document.addEventListener('DOMContentLoaded', function() {
+            const text = "Welcome to Our Adventure!";
+            const typingTextElement = document.getElementById('typing-text');
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < text.length) {
+                    typingTextElement.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100); // Adjust typing speed here (milliseconds)
+                }
+            }
+            
+            // Start typing animation
+            setTimeout(type, 500); // Delay before starting
+        });
     </script>
+    
+    <style>
+        /* Removed typing cursor style */
+    </style>
 </body>
 </html>
