@@ -157,9 +157,16 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-image">
-        <video autoplay muted loop>
+        <!-- Desktop background video -->
+        <video autoplay muted loop class="hidden md:block">
             <source src="./video/herobg.mp4" type="video/mp4">
         </video>
+        
+        <!-- Mobile sequential videos -->
+        <video id="mobile-video" autoplay muted class="block md:hidden">
+            <source src="./video/clip1.mp4" type="video/mp4">
+        </video>
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6" style="color: #ff6b35;"><span id="typing-text"></span></h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white">Join our family as we explore the world of play, books, and baking. Discover creative ideas, honest reviews, and heartfelt stories.</p>
@@ -692,6 +699,38 @@
                     currentSlide = 0;
                 }
                 showSlide(currentSlide);
+            });
+        });
+    </script>
+    
+    <script>
+        // Mobile video sequence player
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileVideo = document.getElementById('mobile-video');
+            const videoSequence = ['./video/clip1.mp4', './video/clip2.mp4', './video/clip3.mp4'];
+            let currentVideoIndex = 0;
+            
+            // Check if we're on mobile
+            const isMobile = window.innerWidth < 768; // 768px is the md breakpoint in Tailwind
+            
+            if (isMobile && mobileVideo) {
+                // Play the next video when the current one ends
+                mobileVideo.addEventListener('ended', function() {
+                    currentVideoIndex = (currentVideoIndex + 1) % videoSequence.length;
+                    mobileVideo.src = videoSequence[currentVideoIndex];
+                    mobileVideo.load();
+                    mobileVideo.play();
+                });
+            }
+            
+            // Handle window resize to switch between mobile and desktop videos
+            window.addEventListener('resize', function() {
+                const isMobileNow = window.innerWidth < 768;
+                if (isMobileNow !== isMobile && mobileVideo) {
+                    // Refresh the page to switch video modes when resizing across breakpoint
+                    // This is a simple approach - a more complex solution would dynamically swap videos
+                    location.reload();
+                }
             });
         });
     </script>
