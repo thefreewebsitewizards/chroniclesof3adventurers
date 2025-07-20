@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Chronicles of 3 Adventurers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#F59E0B',
+                        accent: '#8B5CF6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary">Chronicles of 3 Adventurers</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#" class="text-primary px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Blog</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Follow our family adventures, parenting insights, and creative play ideas</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+                
+                <!-- Back to Home Button -->
+                <div class="mt-8">
+                    <a href="index.html#blog-section" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-green-600 transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Christmas Gift Guide -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-sm mb-3">Holiday</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">Christmas Gift Guide</h2>
+                        <p class="text-gray-600 mb-4">Christmas is right around the corner and I wanted to share with you what I do for Christmas gifts for the boys. The boys don't get a...</p>
+                        <div class="text-sm text-gray-500">December 2024</div>
+                    </div>
+                </article>
+
+                <!-- Summer Holidays -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-yellow-500 text-white px-3 py-1 rounded-full text-sm mb-3">Summer</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">Summer Holidays</h2>
+                        <p class="text-gray-600 mb-4">So we are knee deep into the summer holidays. We are approaching week three and I thought I would do a little blog about summer, the...</p>
+                        <div class="text-sm text-gray-500">July 2024</div>
+                    </div>
+                </article>
+
+                <!-- Salt Dough Ornament -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-accent text-white px-3 py-1 rounded-full text-sm mb-3">Crafts</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">Salt Dough Ornament</h2>
+                        <p class="text-gray-600 mb-4">Create beautiful handmade ornaments with this simple salt dough recipe - perfect for holiday crafting with the kids...</p>
+                        <div class="text-sm text-gray-500">November 2024</div>
+                    </div>
+                </article>
+
+                <!-- An Unintentional Break -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-gray-500 text-white px-3 py-1 rounded-full text-sm mb-3">Personal</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">An Unintentional Break</h2>
+                        <p class="text-gray-600 mb-4">Hello and thank you for stick with us! The last few months have just been incredibly hectic! I have unintentionally...</p>
+                        <div class="text-sm text-gray-500">October 2024</div>
+                    </div>
+                </article>
+
+                <!-- 5 Easy Easter Activities -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full text-sm mb-3">Easter</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">5 Easy Easter Activities</h2>
+                        <p class="text-gray-600 mb-4">We love Easter, a time to be together, family bonding and making memories! I wanted to share with you some easy...</p>
+                        <div class="text-sm text-gray-500">March 2024</div>
+                    </div>
+                </article>
+
+                <!-- Music Bugs -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm mb-3">Activities</span>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-3">Music Bugs</h2>
+                        <p class="text-gray-600 mb-4">I just wanted to share with you, our experience with music bugs. Firstly, music bugs is perfect for under 5's...</p>
+                        <div class="text-sm text-gray-500">February 2024</div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 Chronicles of 3 Adventurers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
