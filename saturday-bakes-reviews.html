@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturday Bakes & Reviews - Chronicles of 3 Adventurers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#F59E0B',
+                        accent: '#EF4444'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">Chronicles of 3 Adventurers</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#blog" class="text-gray-700 hover:text-primary transition px-3 py-2">Blog</a>
+                        <a href="index.html#play" class="text-gray-700 hover:text-primary transition px-3 py-2">Play Ideas</a>
+                        <a href="index.html#books" class="text-gray-700 hover:text-primary transition px-3 py-2">Books</a>
+                        <a href="index.html#about" class="text-gray-700 hover:text-primary transition px-3 py-2">About</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-primary transition px-3 py-2">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                    <a href="index.html#blog" class="text-gray-700 hover:text-primary block px-3 py-2 transition">Blog</a>
+                    <a href="index.html#play" class="text-gray-700 hover:text-primary block px-3 py-2 transition">Play Ideas</a>
+                    <a href="index.html#books" class="text-gray-700 hover:text-primary block px-3 py-2 transition">Books</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-primary block px-3 py-2 transition">About</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-primary block px-3 py-2 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-primary to-green-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Saturday Bakes & Reviews</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">Our weekly baking adventures, honest reviews, and family-friendly recipes</p>
+        </div>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <a href="index.html" class="inline-flex items-center px-4 py-2 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Back to Home
+        </a>
+    </div>
+
+    <!-- Reviews Grid -->
+    <section class="py-8 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Blueberry Muffins" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Blueberry Muffins</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"This week we tried a new blueberry muffin recipe that was a huge hit! The secret ingredient was a touch of lemon zest that really made the flavors pop. Perfect for weekend breakfast treats."</p>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Chocolate Chip Cookies" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Chocolate Chip Cookies</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"Our classic chocolate chip cookie recipe never fails to delight. This week we experimented with adding a pinch of sea salt on top - absolute perfection! The kids loved helping measure ingredients."</p>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Banana Bread" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Banana Bread</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"A great way to use up overripe bananas! The kids enjoyed mashing the bananas and the house smelled amazing while it was baking. Next time we'll add some chocolate chips for extra sweetness."</p>
+                </div>
+                
+                <!-- Review 4 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cupcakes" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Vanilla Cupcakes</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"Simple vanilla cupcakes that are perfect for decorating! We made these for a birthday party and the kids had so much fun with the colorful frosting and sprinkles. Light, fluffy, and delicious."</p>
+                </div>
+                
+                <!-- Review 5 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1549312524-d3123cea4e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Brownies" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Fudgy Brownies</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"Rich, fudgy brownies that are impossible to resist! We added some chopped walnuts for extra texture. These disappeared within hours of coming out of the oven. Definitely a family favorite."</p>
+                </div>
+                
+                <!-- Review 6 -->
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden mr-3 md:mr-4 flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Scones" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base truncate">Strawberry Scones</h4>
+                            <div class="flex text-secondary text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">"Buttery scones with fresh strawberries - perfect for afternoon tea! The texture was lovely and crumbly. Next time we might try adding a glaze on top for extra sweetness. Great with jam and cream."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Chroniclesof3adventurers</h3>
+                    <p class="text-gray-300 text-sm">Celebrating the joy of play, resilience, and family adventures.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2 text-sm">Quick Links</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="index.html#blog" class="text-gray-300 hover:text-white transition">Blog</a></li>
+                        <li><a href="index.html#play" class="text-gray-300 hover:text-white transition">Play Ideas</a></li>
+                        <li><a href="index.html#books" class="text-gray-300 hover:text-white transition">Books</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2 text-sm">Categories</h4>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Outdoor Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Sensory Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Messy Play</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Saturday Bakes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2 text-sm">Newsletter</h4>
+                    <p class="text-gray-300 mb-2 text-sm">Subscribe to get our latest adventures and play ideas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-1 rounded-l-lg text-gray-800 w-full focus:outline-none text-sm">
+                        <button type="submit" class="bg-primary px-3 py-1 rounded-r-lg hover:bg-green-600 transition text-sm">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center">
+                <p class="text-gray-300 text-sm">&copy; 2024 Chronicles of 3 Adventurers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
